@@ -53,7 +53,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     //binder inputet ifrån bokning hit
     $scope.data = {
       adults: 1,
-      kids: 0,
+      children: 0,
     }
     //submit metoden som tar emot formulärdata genom submit-knappen
     $scope.submit = function(){  

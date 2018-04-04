@@ -52,15 +52,15 @@
         </div>
 
         <label class="item item-input">
-          <input type="text" name="namn1" placeholder="Fyll i ditt Förnamn" ng-model="data.namn1" required>
+          <input type="text" name="firstname" placeholder="Fyll i ditt Förnamn" ng-model="data.firstname" required>
         </label>
 
         <label class="item item-input">
-          <input type="text" name="namn2" placeholder="Fyll i ditt Efternamn" ng-model="data.namn2" required>
+          <input type="text" name="surname" placeholder="Fyll i ditt Efternamn" ng-model="data.surname" required>
         </label>
 
         <label class="item item-input">
-          <input type="tel" name="tel" placeholder="Fyll i ditt mobilnr" ng-model="data.tele" required>
+          <input type="tel" name="tel" placeholder="Fyll i ditt mobilnr" ng-model="data.tel" required>
         </label>
 
         <label class="item item-input">
@@ -104,9 +104,9 @@
 
               <h1 class="item item-divider" style="text-align: center;">Dina uppgifter</h1>
 
-              <h3 class="item">{{response.namn1}} {{ response.namn2}} </h3>
+              <h3 class="item">{{response.firstname}} {{ response.surname}} </h3>
               <h3 class="item">{{response.email}} </h3>
-              <h3 class="item">{{response.tele}} </h3>
+              <h3 class="item">{{response.tel}} </h3>
 
               <a href="#tab/home" style="text-decoration: none;">
                 <button class="button button-large button-balanced col" ng-click="reset()" >
