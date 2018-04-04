@@ -1,0 +1,43 @@
+.splash{
+    background: url("../img/bakgrund1.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  .branding{
+    position: relative;
+    width: 50%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .titel1{
+    font: 30px Tahoma, Helvetica, Arial, Sans-Serif;
+    text-align: center;
+    color: rgb(220, 232, 232);
+    text-shadow: 0px 2px 3px #555;
+    font-weight: bold;
+  }
+  .hometext1{
+    margin: 2px;
+    font: 20px Tahoma, Helvetica, Arial, Sans-Serif;
+    position: absolute;
+    color: rgb(220, 232, 232);
+  }
+  .homefooter{
+      text-decoration-line: underline;
+      text-align: center;
+      margin-top: 60vh;
+      color: rgb(220, 232,232);
+      font: 16px Tahoma, Helvetica;
+  }
+  .card {
+    margin: 4px; 
+    line-height: 18px; 
+    background-color: rgb(170, 174, 182); 
+    
+  }
+  .error{
+    color:red;
+    
+  }
+  

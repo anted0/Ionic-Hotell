@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "rum": 1,
+      "namn": "En-rummaren",
+      "pris": 500,
+      "image1":"img/rum1.png",
+      "image2":"img/rum1.1.png",
+      "bio": "Ett av våra standardutbud av hotelrum, i form av en etta, som vanligt med utsikt över sjön och med tillhörande service på hög nivå."
+    },
+    {
+      "id": 2,
+      "rum": 2,
+      "namn": "Två-rummaren",
+      "pris": 700,
+      "image1":"img/rum2.png",
+      "image2":"img/rum2.1.png",
+      "bio": "Återigen har vi överträffat oss själva! Välkommen in och ta del av vår härliga atmosfär i detta fräscha rum."
+    },
+    {
+    "id": 3,
+    "rum": 3,
+    "namn": "Familje-rummet",
+    "pris": 900,
+    "image1":"img/rum3.png",
+    "image2":"img/rum3.1.png",
+    "bio": "Välkommen in och mys med rum och plats för hela familjen där man alltid mår som bäst."
+
+    }
+  ]
