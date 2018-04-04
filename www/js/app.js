@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     }
   })
   .state("tabs.detail", {
-    url : "/list/:aID",
+    url : "/list/:ID",
     views :{
       "list-tab" : {
         templateUrl : "templates/detail.html",
@@ -41,18 +41,19 @@ app.config(function($stateProvider, $urlRouterProvider){
   })
   
     
-  //Controllers
+  //Controllern
   app.controller("ListController",function($scope,$http,$state,$stateParams,$ionicModal){
     $http.get('js/hotels1.json').success(function(data1){  
+      //data ifrån hotels1.json hämtas och sparas som $scope.hotels
       $scope.hotels = data1;
     });
-    $scope.whichHotel = $state.params.aID;  
+    //de 3 olika rummen får olika idn
+    $scope.whichHotel = $state.params.ID;  
 
-    
+    //binder inputet ifrån bokning hit
     $scope.data = {
       adults: 1,
       kids: 0,
-      roomid: $state.params.id
     }
     //submit metoden som tar emot formulärdata genom submit-knappen
     $scope.submit = function(){  
@@ -64,7 +65,7 @@ app.config(function($stateProvider, $urlRouterProvider){
           })
        }    
 
-       //antal dagar
+       //func som tar utch och inch datum och returnerar skillnaden i dagar
   $scope.days = function(date1, date2){
     var date1 = new Date(date1);
     var date2 = new Date(date2);
@@ -80,10 +81,10 @@ app.config(function($stateProvider, $urlRouterProvider){
   }
 
   // totalpris
-  $scope.totalPrice = function(pris, days){
-    var pris;
+  $scope.totalPrice = function(price, days){
+    var price;
     var days;
-    $scope.priceToReturn = pris * days;
+    $scope.priceToReturn = price * days;
 
     return $scope.priceToReturn;
   }
