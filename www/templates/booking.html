@@ -11,9 +11,9 @@
         <h3 style="color: #013e4f;padding-bottom: 1px; font-size: 18px!important;">Antal rum: {{item.room}}</h3>
 
         <div class="item">
-          <img class="full-image" ng-src="{{item.image1}}" alt="" href="">
+          <img class="full-image" ng-src="{{item.image1}}" alt="">
           <hr>
-          <img class="full-image" ng-src="{{item.image2}}" alt="" href="">
+          <img class="full-image" ng-src="{{item.image2}}" alt="">
         </div>
       </div>
     </div>
@@ -25,25 +25,27 @@
     <form name="myForm1" ng-submit="submit()">
       <div class="list">
 
+        <!-- incheckningsdatum-->
         <label class="item item-input item-stacked-label">
           <span class="input-label">Ange incheckningsdatum</span>
-          <input type="date" min="{{today | date:'yyyy-MM-dd'}}" max="2019-12-31" name="checkinDate" ng-model="data.checkinDate" required>
+          <input type="date" max="2019-12-31" name="checkinDate" ng-model="data.checkinDate" required>
         </label>
 
+        <!-- utcheckningsdatum -->
         <label class="item item-input item-stacked-label">
-          <span class="input-label" >Ange utcheckningsdatum</span>
+          <span class="input-label">Ange utcheckningsdatum</span>
           <input type="date" min="{{data.checkinDate | date:'yyyy-MM-dd'}}" max="2019-12-31" name="checkoutDate" ng-model="data.checkoutDate"
             required ng-disabled="dateForm.checkoutDate.$invalid">
         </label>
 
         <div class="padding"></div>
 
-        <ion-radio ng-model="data.adults" ng-value="'1'" name="adults" ng-checked="1">En vuxen</ion-radio>
+        <!-- antal vuxna -->
+        <ion-radio ng-model="data.adults" ng-value="'1'" name="adults">En vuxen</ion-radio>
+        <ion-radio ng-model="data.adults" ng-value="'2'" name="adults" ng-hide="{{item.id}} === 1">Två vuxna</ion-radio>
 
-        <ion-radio ng-model="data.adults" ng-value="'2'" name="adults" ng-hide="{{item.room}} === 1">Två vuxna</ion-radio>
-
-
-        <label class="item item-input" ng-show="{{item.room}} === 3">
+        <!-- antal barn -->
+        <label class="item item-input" ng-show="{{item.id}} === 3">
           <input type="number" max="3" name="children" placeholder="Antal barn | MAX 3" ng-model="data.children">
         </label>
 
@@ -51,20 +53,24 @@
           <h3>kontaktuppgifter</h3>
         </div>
 
+        <!-- förnamn -->
         <label class="item item-input">
           <input type="text" name="firstname" placeholder="Fyll i ditt Förnamn" ng-model="data.firstname" required>
         </label>
-
+        
+        <!-- efternamn -->
         <label class="item item-input">
           <input type="text" name="surname" placeholder="Fyll i ditt Efternamn" ng-model="data.surname" required>
         </label>
 
+        <!-- telefon nmr -->
         <label class="item item-input">
           <input type="tel" name="tel" placeholder="Fyll i ditt mobilnr" ng-model="data.tel" required>
         </label>
 
+        <!--Email adress -->
         <label class="item item-input">
-          <input type="email" name="email" placeholder="Fyll i din email-address" ng-model="data.email">
+          <input type="email" name="email" placeholder="Fyll i din email-address" ng-model="data.email" required>
           <div ng-show="myForm1.email.$error.email" class="error">
             Ange en giltig e-postadress
           </div>
@@ -89,30 +95,27 @@
             <h1 class="item" style="text-align: center; font-size:22px!important">{{item.name}}</h1>
             <img class="full-image" ng-src="{{item.image1}}" alt="">
 
-             
-              <h3 class="item"><strong>Kostnad:</strong> {{item.price}} kr/natt</h3>
-
-              
-
               <h3 class="item"><strong>Incheckningsdatum:</strong> {{data.checkinDate | date:'yyyy-MM-dd'}}
               <h3 class="item"><strong>Utcheckningsdatum:</strong> {{data.checkoutDate | date:'yyyy-MM-dd'}}
+             
+              <h3 class="item"><strong>Kostnad:</strong> {{item.price}} kr/natt</h3>
               <h3 class="item"><strong>Antal nätter:</strong> {{days(data.checkinDate, data.checkoutDate)}}
               <h3 class="item"><strong>Totalpris:</strong> {{totalPrice(item.price, days(data.checkinDate, data.checkoutDate))}} kr
         
-              <h3 class="item"><strong>Antal vuxna:</strong> {{response.adults}} </h3>
-              <h3 class="item"><strong>Antal barn:</strong> {{response.children}} </h3> 
+              <h3 class="item"><strong>Antal vuxna:</strong> {{data.adults}} </h3>
+              <h3 class="item"><strong>Antal barn:</strong> {{data.children}} </h3> 
 
               <h1 class="item item-divider" style="text-align: center;">Dina uppgifter</h1>
 
-              <h3 class="item">{{response.firstname}} {{ response.surname}} </h3>
-              <h3 class="item">{{response.email}} </h3>
-              <h3 class="item">{{response.tel}} </h3>
+              <h3 class="item">{{data.firstname}} {{ data.surname}} </h3>
+              <h3 class="item">{{data.email}} </h3>
+              <h3 class="item">{{data.tel}} </h3>
 
               <a href="#tab/home" style="text-decoration: none;">
                 <button class="button button-large button-balanced col" ng-click="reset()" >
                  <p style="color: white; font-size: 20px;">Thank you</p>
                 </button>
-            </a>    
+              </a>    
           </div>
         </ion-content>
       </ion-modal-view>
