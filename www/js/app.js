@@ -1,7 +1,6 @@
 var app = angular.module('starter', ['ionic',])
 
 
-
 app.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider

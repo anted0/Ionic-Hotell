@@ -34,8 +34,9 @@
         <!-- utcheckningsdatum -->
         <label class="item item-input item-stacked-label">
           <span class="input-label">Ange utcheckningsdatum</span>
-          <input type="date" min="{{data.checkinDate | date:'yyyy-MM-dd'}}" max="2019-12-31" name="checkoutDate" ng-model="data.checkoutDate"
-            required ng-disabled="dateForm.checkoutDate.$invalid">
+          <input type="date" min="{{data.checkinDate | date:'yyyy-MM-dd'}}" max="2019-12-31" name="checkoutDate"
+              ng-model="data.checkoutDate"
+              required ng-disabled="dateForm.checkoutDate.$invalid">
         </label>
 
         <div class="padding"></div>
@@ -57,7 +58,7 @@
         <label class="item item-input">
           <input type="text" name="firstname" placeholder="Fyll i ditt Förnamn" ng-model="data.firstname" required>
         </label>
-        
+
         <!-- efternamn -->
         <label class="item item-input">
           <input type="text" name="surname" placeholder="Fyll i ditt Efternamn" ng-model="data.surname" required>
@@ -76,8 +77,8 @@
           </div>
         </label>
 
-
-        <input type="submit" ng-click="modal.show()" value="Boka" class="button button-block button-balanced" ng-disabled="myForm1.$invalid">
+        <input type="submit" ng-click="modal.show()" value="Boka"
+         class="button button-block button-balanced" ng-disabled="myForm1.$invalid">
 
     </form>
 

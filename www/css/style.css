@@ -1,5 +1,5 @@
 .splash{
-    background: url("../img/bakgrund1.jpg") no-repeat center center fixed;
+    background: url("../img/bakgrundblur.jpeg") no-repeat center center fixed;
     background-size: cover;
   }
   .branding{
@@ -16,6 +16,7 @@
     color: rgb(220, 232, 232);
     text-shadow: 0px 2px 3px #555;
     font-weight: bold;
+    position: relative;
   }
   .hometext1{
     margin: 2px;
@@ -31,7 +32,7 @@
       font: 16px Tahoma, Helvetica;
   }
   .card {
-    margin: 4px; 
+    margin: 6px; 
     line-height: 18px; 
     background-color: rgb(170, 174, 182); 
     
